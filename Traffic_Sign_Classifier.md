@@ -36,7 +36,9 @@ signs data set:
 * The size of the validation set is 4410
 * The size of test set is 12630
 * The shape of a traffic sign image is (32, 32, 3)
-* The number of unique classes/labels in the data set is 51839
+* The number of unique classes/labels in the data set is 43
+
+Confirmed that the number of unique classess was consistent across training, validation & testing datasets
 
 ##2. Include an exploratory visualization of the dataset.
 
