@@ -7,3 +7,4 @@ models
 *.p
 lenet.*
 .DS_Store
+.gitignore
