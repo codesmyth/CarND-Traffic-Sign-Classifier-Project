@@ -51,8 +51,7 @@ As a first step, I decided to convert the images to grayscale because I found th
 
 Here is an example of a traffic sign image before and after grayscaling and normalisation
 
-![alt text][image2]
-![alt text][image3]
+![alt text][image2] ![alt text][image3]
 
 As a last step, I normalized the image data because to improve the conditioning of the data as a well conditioned dataset makes it an easier task for the optimiser.
 
