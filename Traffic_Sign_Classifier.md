@@ -27,7 +27,7 @@ The goals / steps of this project are the following:
 Link to my [project code](https://github.com/codesmyth/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
 
 
-###Data Set Summary & Exploration
+##Data Set Summary & Exploration
 
 I used the pandas library to calculate summary statistics of the traffic
 signs data set:
@@ -38,27 +38,28 @@ signs data set:
 * The shape of a traffic sign image is (32, 32, 3)
 * The number of unique classes/labels in the data set is 51839
 
-####2. Include an exploratory visualization of the dataset.
+##2. Include an exploratory visualization of the dataset.
 
 Here is an exploratory visualization of the data set. It is a histogram showing how the data is comprised of the different signs and their respective frequencies. It should be noted that there are significant differences in the frequencies across the 43 distinct signs. However the validation and testing datasets have similar distributions to the training dataset.
 
 ![alt text][image1]
 
-###Design and Test a Model Architecture
+##Design and Test a Model Architecture
 
 
 As a first step, I decided to convert the images to grayscale because I found that during the additional colour channels didn't make much difference to the accuracy. Because the image was grayscaled I reduced the number for channels from 3 to 1.
 
 Here is an example of a traffic sign image before and after grayscaling and normalisation
 
-![alt text][image2] ![alt text][image3]
+![alt text][image2]
+![alt text][image3]
 
 As a last step, I normalized the image data because to improve the conditioning of the data as a well conditioned dataset makes it an easier task for the optimiser.
 
 I decided to not to generate additional data and to leverage the architecture of the covnet such that data I had was sufficient to achieve 93% accuracy on the validation set.
 
 
-####Final Model Architecture
+##Final Model Architecture
 
 My final model consisted of the following layers:
 
@@ -103,7 +104,7 @@ The architecture was very much modelled on the lenet architecture as it had been
 
 
 
-###Test a Model on New Images
+##Test a Model on New Images
 
 Here are five German traffic signs that I found on the web:
 
@@ -129,17 +130,17 @@ I ran it again. this time I included and image that wasn't in the data set lable
 
 ![alt text][image5]
 
-For the second image, two eldery people crossing, which wasn't in the set of labels the model is relatively sure that this is a "Vehicles over 3.5 metric tons prohibited" (probability of 0.98) and that it is a "Dangerous curve to the right" (probabiliy of 0.15) the other probabilities are negligible.
+For the second image, two eldery people crossing, which wasn't in the set of labels the model is relatively sure that this is a "Vehicles over 3.5 metric tons prohibited" (probability of 0.98) and more interestingly that it is a "Dangerous curve to the right" (probabiliy of 0.15) the other probabilities are negligible.
 
 for the second image,
 
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
 | .98         			| Vehicles over 3.5 metric tons prohibited 									|
-| .20     				| Dangerous curve to the right 										|
-| .05					| Roundabout mandatory											|
-| .04	      			| Traffic signals				 				|
-| .01				    | Speed limit (20km/h)      							|
+| .15     				| Dangerous curve to the right 										|
+| ~.00					| Roundabout mandatory											|
+| ~.00	      			| Traffic signals				 				|
+| ~.00				    | Speed limit (20km/h)      							|
 
 
 
